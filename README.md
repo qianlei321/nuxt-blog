@@ -1,4 +1,4 @@
-## 说明
+# 说明
     一.后台(admin)
         vue项目
         1.启动方式：npm run dev
@@ -15,7 +15,7 @@
             upload(上传文件存储)
             utils(工具类)
             index.js(主方法)
-## 功能
+# 功能
     一.后台(admin)
         1.菜单管理
         2.文章管理
@@ -24,10 +24,11 @@
     二.前台(front) 
         1.首页
         2.首页侧边栏
-        2.文章分类
-        3.附件下载  
+        3.文章分类
+        4.标签分类
+        5.附件下载  
 
-## 数据库
+# 数据库
     menu (菜单)
         menuId : ObjectId
         name: {unique:true,type:String},    
@@ -42,6 +43,7 @@
         original : Boolean //是否原创
         title: String  //标题
         abstract: String  //前言
+        picture: String,  //图片
         content: String  //内容
         publish: Boolean  //公开
         tag: Array //标签
@@ -70,29 +72,45 @@
         name : type:String  
         date : Date
 
-## 接口
+# 接口
     一.后台(admin)
         article.js
-            /admin/article/getTag  /*获取所有标签*/
-            /admin/article/saveArticle /*存储文章*/
-            /admin/article/editArticle /*更改文章*/
-            /admin/article/deleteArtices /*文章-删除*/
-            /admin/article/searchArtices /*查找文章*/
-            /admin/article/changePublish /*更改文章状态*/
+            /api/admin/article/getTag  /*获取所有标签*/
+            /api/admin/article/saveArticle /*存储文章*/
+            /api/admin/article/editArticle /*更改文章*/
+            /api/admin/article/deleteArtices /*文章-删除*/
+            /api/admin/article/searchArtices /*查找文章*/
+            /api/admin/article/changePublish /*更改文章状态*/
         file.js
-            /admin/file/uploadfiles /*文件-上传多个文件*/
-            /admin/file/download/:name /*文件-下载*/
-            /admin/file/deleteFile /*文件-删除*/
-            /admin/file/searchFile /*文件-查找*/
+            /api/admin/file/uploadfiles /*文件-上传多个文件*/
+            /api/admin/file/download/:name /*文件-下载*/
+            /api/admin/file/deleteFile /*文件-删除*/
+            /api/admin/file/searchFile /*文件-查找*/
+            /api/admin/file/searchPictureFile /*文件-查找上传文件中的图片文件*/
         user.js
-            /admin/user/user /*管理员信息*/
-            /admin/user/changePassword /*管理员-修改密码*/
-            /admin/user/login /*登录*/
+            /api/admin/user/user /*管理员信息*/
+            /api/admin/user/changePassword /*管理员-修改密码*/
+            /api/admin/user/login /*登录*/
+        menu.js
+            /api/admin/menu/saveTopMenu /*新增一级菜单*/
+            /api/admin/menu/saveTopMenu /*新增二级菜单*/
+            /api/admin/menu/searchAllMenu /*查询所有菜单*/
+            /api/admin/menu/deleteMenu /*删除一级和二级菜单*/
+            /api/admin/menu/editTopMenu /*修改一级和二级菜单*/
     二.前台(front) 
-
-## 帮助文档
-
-手机适应
-404页
-菜单优化
-触底加载
+        index.js
+            /api/front/searchAllMenu /*查询所有菜单*/
+            /api/front/allArtices /*查询所有文章*/
+            /api/front/ArticesByPage /*分页查询文章*/
+            /api/front/searchAllMenuNum /*查询所有菜单数量*/
+            /api/front/searchAllArticleNum /*查询所有文章数量*/
+            /api/front/searchAllTagNum /*查询所有标签数量*/
+            /api/front/searchLastArticleDate /*查询最后文章创建时间*/
+            /api/front/searchIcon15 /*查询前15个标签*/
+            /api/front/allTags /*查询所有标签*/
+            /api/front/searchArtice /*按id查找文章*/
+            /api/front/category_Artices /*按分类查找全部文章*/
+            /api/front/category_ArticesByPage /*按分类分页查找文章*/
+            /api/front/tags_Artices /*按标签查找全部文章*/
+            /api/front/tags_ArticesByPage /*按标签分页查找文章*/
+# 帮助文档

@@ -22,8 +22,8 @@
                 一位专注全栈技术的前端工程师，整理工作所遇的各种所遇问题，分享个人个心得体会。
                 <p>前端即兴趣，兴趣即未来！！！</p>
                 <p>网站源码：
-                  <a href="https://github.com/xuanmos/xm-nuxtjs-wordpress/stargazers" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/xuanmos/xm-nuxtjs-wordpress.svg?style=social">
+                  <a href="https://github.com/qianlei321/nuxt-blog" target="_blank">
+                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/qianlei321/nuxt-blog.svg?style=social">
                   </a>
                 </p>
                 

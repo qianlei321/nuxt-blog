@@ -120,7 +120,7 @@ router.get('/searchFile',async(ctx)=>{
     }
 })
 
-/*文件-查找图片文件*/
+/*文件-查找上传文件中的图片文件*/
 router.get('/searchPictureFile',async(ctx)=>{
   const File = mongoose.model('file')
   // await File.find({"fileName":{$regex:/.png$/|/.jpg$/|/.jepg$/|/.gif$/}})
