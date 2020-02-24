@@ -1,6 +1,6 @@
 <template>
     <div class="footer-div">
-        <a href="http://beian.miit.gov.cn" target="_blank">京ICP备15011150号-2</a>
+        <a href="http://beian.miit.gov.cn" target="_blank">冀ICP备18030524号-2</a>
         <div>&copy; 2019 - Designed and developed by 钱磊 - 18131371735</div>
     </div>
 </template>

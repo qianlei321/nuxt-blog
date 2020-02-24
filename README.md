@@ -1,3 +1,10 @@
+# 项目简介
+> 前台使用vue-ssr(nuxt)进行服务端渲染,通过服务端渲染,可以优化SEO抓取,提升首页加载速度,同时使用koa2编写后台接口，接口使用jwt技术进行身份认证提升安全性。
+
+> 后台使用vue开发
+
+> 数据库使用非关系型数据库(mongoDB)
+
 # 说明
     一.后台(admin)
         vue项目
@@ -113,4 +120,29 @@
             /api/front/category_ArticesByPage /*按分类分页查找文章*/
             /api/front/tags_Artices /*按标签查找全部文章*/
             /api/front/tags_ArticesByPage /*按标签分页查找文章*/
+# 部署文档
+    一、配置文件位置
+        1.后台(admin)
+            src/assets/js/config.js [使用Nginx反向代理则无需更改]
+        2.前台(front)
+            nuxt.config.js [使用Nginx反向代理则无需更改]     
+        3.koa2后台接口 (front/server)
+            database/init.js  [更改mongoDB主机地址和数据库]
+    二、打包
+        1.后台(admin)
+            在admin根目录运行'npm run build',"dist"文件夹为打包后文件
+        2.前台(front)和koa2后台接口 (front/server)
+            在admin根目录运行'npm run build'，打包以下文件夹和文件
+            ● ".nuxt"文件夹
+            ● "server"文件夹
+            ● "static"文件夹
+            ● "nuxt.config.js"文件
+            ● "package.json"文件
+    三、公网部署
+        1.后台(admin)
+            Nginx反向代理
+        2.前台(front)和koa2后台接口 (front/server)
+            PM2部署
+            Nginx反向代理
 # 帮助文档
+前台(front)界面查看--> [我的博客](http://www.qiann.cn "钱磊的博客")

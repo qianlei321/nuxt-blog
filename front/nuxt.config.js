@@ -3,19 +3,34 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
+  server: {
+    port: 3000, // default: 3000
+    host: 'localhost' // default: localhost
+  },
 
   /*
   ** Headers of the page
   */
   head: {
-    title: "个人博客",
+    title: "钱磊的博客",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { 
+        charset: 'utf-8' 
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '一位专注全栈技术的前端工程师，整理工作所遇的各种所遇问题，分享个人个心得体会。前端即兴趣，兴趣即未来！！！'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: '钱磊，前端博客，钱磊的博客，全栈技术，全栈博客，nuxt-blog，nuxt博客'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }
     ],
     script: [
       {src: 'http://at.alicdn.com/t/font_1595091_qnhwzgrkos.js'}
