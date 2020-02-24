@@ -145,4 +145,4 @@
             PM2部署
             Nginx反向代理
 # 帮助文档
-前台(front)界面查看--> [我的博客](http://www.qiann.cn "钱磊的博客")
+前台(front)界面查看--> [我的博客](http://qiann.cn "钱磊的博客")
