@@ -28,7 +28,7 @@ router.get('/ArticesByPage',async(ctx)=>{
     const article = mongoose.model('article')
     let query = ctx.query;
     await article.countDocuments({publish:true}, (error, count) => {}).then(async(count)=>{
-        await article.find({publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||20) .sort("-date").exec().then(async(result)=>{
+        await article.find({publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||10) .sort("-date").exec().then(async(result)=>{
             ctx.body={
                 status: 200,
                 data: result,
@@ -138,7 +138,7 @@ router.get('/category_ArticesByPage',async(ctx)=>{
     const article = mongoose.model('article')
     let query = ctx.query;
     await article.countDocuments({type:query.name,publish:true}, (error, count) => {}).then(async(count)=>{
-        await article.find({type:query.name,publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||20) .sort("-date").exec().then(async(result)=>{
+        await article.find({type:query.name,publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||10) .sort("-date").exec().then(async(result)=>{
             ctx.body={
                 status: 200,
                 data: result,
@@ -164,7 +164,7 @@ router.get('/tags_ArticesByPage',async(ctx)=>{
     const article = mongoose.model('article')
     let query = ctx.query;
     await article.countDocuments({tag:query.name,publish:true}, (error, count) => {}).then(async(count)=>{
-        await article.find({tag:query.name,publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||20) .sort("-date").exec().then(async(result)=>{
+        await article.find({tag:query.name,publish:true}).skip((query.pageNo - 1) * query.pageSize).limit(parseInt(query.pageSize)||10) .sort("-date").exec().then(async(result)=>{
             ctx.body={
                 status: 200,
                 data: result,

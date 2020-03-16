@@ -109,6 +109,22 @@
     border-bottom-color:#ffffff!important;
     font-size: 16px;
 }
+
+.el-menu-item:hover{
+    outline: 0 !important;
+    color: #409EFF !important;
+    transition: 1s;
+}
+/* .el-menu-item.is-active {
+    color: #fff !important;
+    background: #409EFF !important;
+    transition: 1s;
+} */
+.el-submenu__title:focus, .el-submenu__title:hover{
+    outline: 0 !important;
+    color: #409EFF !important;
+    background: none !important;
+}
 .el-menu.el-menu--horizontal{
     border-bottom:none;
 }

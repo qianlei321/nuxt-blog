@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const db = "mongodb://118.24.138.32:27017/test"
+const db = "mongodb://118.24.138.32:27017/blog"
 const glob = require('glob') //读取本地文件
 const {resolve} = require('path')
 

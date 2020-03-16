@@ -26,7 +26,7 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: '钱磊，前端博客，钱磊的博客，全栈技术，全栈博客，nuxt-blog，nuxt博客'
+        content: '钱磊，前端，博客，前端博客，钱磊的博客，全栈技术，全栈博客，nuxt-blog，nuxt博客'
       }
     ],
     link: [
@@ -88,8 +88,19 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    transpile: [/^element-ui/],
-    
+    //transpile: [/^element-ui/],
+    // 按需引入element-ui
+    babel: {
+      plugins: [
+        [ "component", 
+          {
+            "libraryName": "element-ui",
+            "styleLibraryName": "theme-chalk"
+          }
+        ] 
+      ] 
+    },
+
     /*
     ** You can extend webpack config here
     */

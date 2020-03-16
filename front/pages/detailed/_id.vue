@@ -44,6 +44,15 @@
 <script>
 //import {state} from "vuex";
 export default {
+    head(){
+        return{
+            title:this.articeData.title,
+            meta:[{
+                'name':'keywords',
+                'content': this.articeData.tag.join('、')
+            }]
+        }
+    },
     data() {
         return {
             articeData:'',
@@ -65,7 +74,17 @@ export default {
         }
     },
     mounted(){
-        
+        //百度推送连接
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
     }
 }
 </script>
@@ -88,6 +107,7 @@ pre.ql-syntax {
     font-family: Menlo, monospace;
     border-radius: .3rem;
     font-size: 1rem;
+    line-height: 1.4rem;
 }
 .container .el-breadcrumb{
     padding: .8rem;
@@ -105,7 +125,7 @@ pre.ql-syntax {
 }
 .list-icon {
     padding: .5rem 0;
-    color: #ccc;
+    color: #6f6f6f;
 }
 .list-icon span {
     display: inline-block;
@@ -128,7 +148,7 @@ pre.ql-syntax {
 .articles_abstract{
     font-size: 1.0rem;
     text-indent:2.0rem;
-    color: #888;
+    color: #6f6f6f;
     line-height: 1.6rem;
 }
 .detailed-main{
@@ -137,9 +157,9 @@ pre.ql-syntax {
     margin-bottom: 2rem;
     margin-top: 2rem;
     -webkit-margin-bottom-collapse: 2rem;
-    color: #333;
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.05rem;
+    color: #404040;
+    line-height: 2.2rem;
 }
 .detailed-main::-webkit-scrollbar{
     background-color:  #333;

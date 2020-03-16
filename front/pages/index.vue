@@ -50,7 +50,7 @@ export default {
       articesData:null,
       total:0,
       pageNo:1,
-      pageSize:20,
+      pageSize:10,
     }
   },
   methods:{
@@ -64,7 +64,7 @@ export default {
   async asyncData (context) {
     let[res1] = await Promise.all([
         // 获取文章数据
-        context.$axios.get(`/front/ArticesByPage`,{params:{pageNo:1,pageSize:20}}).then(res => {
+        context.$axios.get(`/front/ArticesByPage`,{params:{pageNo:1,pageSize:10}}).then(res => {
             return res
         })
     ])
@@ -131,7 +131,7 @@ export default {
 .articles_abstract{
   font-size: 1.0rem;
   text-indent:2.0rem;
-  color: #888;
+  color: #6f6f6f;
   line-height: 1.6rem;
 }
 .articles_div{
@@ -147,7 +147,7 @@ export default {
 }
 .list-icon{
     padding: .5rem 0;
-    color: #ccc;
+    color: #6f6f6f;
     text-align:right;
 }
 .articles_line{

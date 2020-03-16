@@ -101,18 +101,18 @@ router.post('/editTopMenu',async(ctx)=>{
     if(data.f_id){
         await Menu.findById(data.f_id, function(err, menuData){
             //判断是否存在重复名称
-            // let isSame = false
-            // for(var i = 0; i < menuData.children.length; i++){
-            //     if(menuData.children[i].name == data.name){
-            //         isSame = true
-            //     }
-            //     if(menuData.children[i]._id == data._id){
-            //         menuData.children[i].name = data.name
-            //         menuData.children[i].order = data.order
-            //     }
-            // }
+            let isSame = false
+            for(var i = 0; i < menuData.children.length; i++){
+                if(menuData.children[i].name == data.name){
+                    isSame = true
+                }
+                if(menuData.children[i]._id == data._id){
+                    menuData.children[i].name = data.name
+                    menuData.children[i].order = data.order
+                }
+            }
             // if (isSame) {
-
+            console.log(menuData)
             // } else {
                 menuData.save()
             //}

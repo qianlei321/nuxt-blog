@@ -11,7 +11,7 @@
                 <el-table-column type="index" width="55" align="center"></el-table-column>
                 <el-table-column prop="title" label="标题" >
                 </el-table-column>
-                <el-table-column prop="commentNum" label="浏览量">
+                <el-table-column prop="pv" label="浏览量">
                 </el-table-column>
                 <el-table-column prop="likeNum" label="点赞量">
                 </el-table-column>

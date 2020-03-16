@@ -66,7 +66,7 @@ async function start() {
   const nuxt = new Nuxt(config)
   //会读取 nuxt.config.js 中的配置项，判断是否指定路径和端口，当不存在时会赋值默认值
   const {
-    host = process.env.HOST || '127.0.0.2',
+    host = process.env.HOST || '127.0.0.1',
     port = process.env.PORT || 3000
   } = nuxt.options.server
 

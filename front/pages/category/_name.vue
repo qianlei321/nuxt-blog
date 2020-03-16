@@ -53,7 +53,7 @@ export default {
             categoryName:'',
             total:0,
             pageNo:1,
-            pageSize:20,
+            pageSize:10,
         }
     },
     validate ({ params, store }) {
@@ -80,7 +80,7 @@ export default {
         let res1 = context.params.name
         let[res2] = await Promise.all([
             // 获取文章数据
-            context.$axios.get(`/front/category_ArticesByPage`,{params:{pageNo:1,pageSize:20,name:context.params.name}}).then(res => {
+            context.$axios.get(`/front/category_ArticesByPage`,{params:{pageNo:1,pageSize:10,name:context.params.name}}).then(res => {
                 return res
             })
         ])
@@ -160,11 +160,6 @@ export default {
     display: block;
     margin: 8px auto;
 }
-.list-icon{
-    padding: .5rem 0;
-    color: #ccc;
-    text-align:right;
-}
 .articles_line{
     height: 1.3rem;
     width: 100%;
@@ -197,7 +192,8 @@ pre.ql-syntax {
 }
 .list-icon {
     padding: .5rem 0;
-    color: #ccc;
+    color: #6f6f6f;
+    text-align: right;
 }
 .list-icon span {
     display: inline-block;
@@ -223,7 +219,7 @@ pre.ql-syntax {
     color: #888;
     line-height: 1.6rem;
 }
-.detailed-main{
+/* .detailed-main{
     border-top: 1px solid #d9dada;
     padding: 1.3rem;
     margin-bottom: 2rem;
@@ -235,7 +231,7 @@ pre.ql-syntax {
 }
 .detailed-main::-webkit-scrollbar{
     background-color:  #333;
-}
+} */
 .noData{
     text-align: center;
     padding:3.125rem;
